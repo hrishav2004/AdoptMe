@@ -213,19 +213,9 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (user?.role === 'admin') {
-      //   try {
-      //     const getCommunityMembers = async () => {
-      //     const res = await fetch('api/community');
-      //     const data = await res.json();
-      //     setMembers(data.members);
-      //   };
-      // } catch (err) {
-      //   setError("Some unexpected error occured.")
-      // }
-      //   getCommunityMembers();
       const getCommunityMembers = async () => {
         try {
-          const res = await fetch('api/community');
+          const res = await fetch('https://adoptme-bk01.onrender.com/api/community');
           const data = await res.json();
           if(!res.ok){
             setError(data.message);
@@ -244,7 +234,7 @@ const Dashboard = () => {
   const handleLogout = async (e) => {
     e.preventDefault();
     try {
-      await fetch('/api/logout', { method: "POST" });
+      await fetch('https://adoptme-bk01.onrender.com/api/logout', { method: "POST" });
       navigate('/login');
     } catch (err) {
       console.error(err);
@@ -259,7 +249,7 @@ const Dashboard = () => {
   const confirmRemovePet = async () => {
     if (!petToDelete) return;
     try {
-      await fetch(`api/deletepet/${petToDelete._id}`, { method: 'DELETE' });
+      await fetch(`https://adoptme-bk01.onrender.com/api/deletepet/${petToDelete._id}`, { method: 'DELETE' });
       setPetList(currentPets => currentPets.filter(p => p._id !== petToDelete._id));
       setPetToDelete(null);
     } catch (err) {
@@ -275,7 +265,7 @@ const Dashboard = () => {
   const confirmRemoveUser = async () => {
     if (!userToDelete) return;
     try {
-      await fetch(`api/deleteuser/${userToDelete._id}`, { method: 'DELETE' });
+      await fetch(`https://adoptme-bk01.onrender.com/api/deleteuser/${userToDelete._id}`, { method: 'DELETE' });
     
       setMembers(currentMembers => currentMembers.filter(m => m._id !== userToDelete._id));
       setUserToDelete(null);

@@ -21,7 +21,7 @@ export const PetProvider = (props) => {
             setPets([])
             setPetList([])
             const getPets = async (user_id) =>{
-                const res = await fetch(`api/pets/${user_id}`,{
+                const res = await fetch(`https://adoptme-bk01.onrender.com/api/pets/${user_id}`,{
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json'
@@ -37,7 +37,7 @@ export const PetProvider = (props) => {
     // Get the details of all the pets under the current user
     useEffect(() => {
         const getPetDetails = async (pet) => {
-            const res = await fetch(`api/petdetails/${pet}`, {
+            const res = await fetch(`https://adoptme-bk01.onrender.com/api/petdetails/${pet}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'

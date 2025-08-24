@@ -39,7 +39,7 @@ const PutForAdoption = () => {
     // Append the owner id
     formData.append('owner', user._id);
 
-    const res = await fetch('api/uploadpet', {
+    const res = await fetch('https://adoptme-bk01.onrender.com/api/uploadpet', {
         method: 'POST',
         body: formData
     })

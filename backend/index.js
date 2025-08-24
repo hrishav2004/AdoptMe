@@ -26,6 +26,11 @@ app.use(methodOverride('_method'));
 app.use(cookieParser());
 app.use(express.static('public'));
 
+app.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true
+}));
+
 // Middleware to check if the user is logged in or not
 const verifyToken = (req, res, next) => {
     const token = req.cookies.token

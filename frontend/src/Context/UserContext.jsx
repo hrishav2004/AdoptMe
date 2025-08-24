@@ -8,7 +8,7 @@ export const UserProvider = (props) => {
 
     const getUser = async () => {
         try {
-            const res = await fetch('/api/users', { method: 'GET' });
+            const res = await fetch('https://adoptme-bk01.onrender.com/api/users', { method: 'GET' });
             const data = await res.json();
             if (res.ok) setUser(data.user);
             else setUser(null);

@@ -8,7 +8,7 @@ const ProtectFromAuthenticatedUsers = ({ children }) =>{
     useEffect(() => {
         const checkLoggedIn = async () => {
             try{
-                const res = await fetch('/api/users', {
+                const res = await fetch('https://adoptme-bk01.onrender.com/api/users', {
                     method: 'GET'
                 })
                 if(res.ok){

@@ -87,7 +87,7 @@ const UpdateProfile = () => {
         }
 
         try {
-            const res = await fetch ('/api/update-profile', {
+            const res = await fetch ('https://adoptme-bk01.onrender.com/api/update-profile', {
                 method: 'PUT',
                 body: submissionData,
             });

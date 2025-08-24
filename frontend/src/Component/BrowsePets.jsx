@@ -78,7 +78,7 @@ const BrowsePets = () => {
     useEffect(() => {
         const getAllPets = async () => {
             try{
-                const res = await fetch('/api/pets', {
+                const res = await fetch('https://adoptme-bk01.onrender.com/api/pets', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json'

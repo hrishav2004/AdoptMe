@@ -97,7 +97,7 @@ const Register = () => {
     if(role == 'user'){
       setUserData(formData)
       try{  
-          const res = await fetch('api/register/user', {
+          const res = await fetch('https://adoptme-bk01.onrender.com/api/register/user', {
           method: 'POST',
           body: formData
           })
@@ -128,7 +128,7 @@ const Register = () => {
         formData.role = 'admin'
         setAdminData(formData)
         try{
-          const res = await fetch ('api/register/admin', {
+          const res = await fetch ('https://adoptme-bk01.onrender.com/api/register/admin', {
             method: 'POST',
             body: formData
           })

@@ -15,7 +15,7 @@ const Community = () => {
   useEffect(() => {
     const getMembers = async () => {
         try {
-          const res = await fetch('/api/community', {
+          const res = await fetch('https://adoptme-bk01.onrender.com/api/community', {
               method: 'GET',
               headers: {
                   'Content-Type': 'application/json'

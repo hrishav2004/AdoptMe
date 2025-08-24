@@ -19,7 +19,7 @@ const Navbar = () => {
   const handleLogout = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('/api/logout', {
+      const res = await fetch('https://adoptme-bk01.onrender.com/api/logout', {
         method: "POST"
       });
       navigate('/');
